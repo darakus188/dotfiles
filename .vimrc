@@ -35,7 +35,11 @@ if executable('rg')
     set grepformat=%f:%l:%c:%m
 endif
 
-" Plug
+" System clipboard integration
+noremap <leader>p :read !xsel --clipboard --output<cr>
+noremap <leader>c :w !xsel -ib<cr><cr>
+
+" Plugin section
 call plug#begin('~/.vim/plugged')
 " Asyncronous Linter
 Plug 'w0rp/ale'
@@ -56,7 +60,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rustfmt_autosave = 1
-
-
 call plug#end()
+
+" Rust settings
+let g:rustfmt_autosave = 1
