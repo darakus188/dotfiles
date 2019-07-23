@@ -39,6 +39,9 @@ endif
 noremap <leader>p :read !xsel --clipboard --output<cr>
 noremap <leader>c :w !xsel -ib<cr><cr>
 
+" Status Bar
+hi statusline guibg=White ctermfg=8 guifg=DarkSlateGray ctermbg=15
+
 " Plugin section
 call plug#begin('~/.vim/plugged')
 " Asyncronous Linter
@@ -51,16 +54,21 @@ Plug 'airblade/vim-rooter'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 " LSP support
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-" Completion
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Rust
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
-" Rust settings
+" ALE Linter
+let g:ale_linters = {
+    \ 'rust': ['rls'],
+    \ 'Markdown': ['proselint']
+    \ }
+
+" Rust
 let g:rustfmt_autosave = 1
+let g:ale_rust_rls_config = {
+    \ 'rust': {
+        \ 'clippy_preference': 'on'
+    \ }
+    \ }
