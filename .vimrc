@@ -6,7 +6,7 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 " set number
 set showcmd
 " set backspace=
-" set mouse=a
+set mouse=a
 filetype plugin indent on
 
 " Markdown settings
@@ -40,7 +40,7 @@ noremap <leader>p :read !xsel --clipboard --output<cr>
 noremap <leader>c :w !xsel -ib<cr><cr>
 
 " Status Bar
-hi statusline guibg=White ctermfg=8 guifg=DarkSlateGray ctermbg=15
+hi statusline ctermfg=8 ctermbg=15
 
 " Plugin section
 call plug#begin('~/.vim/plugged')
