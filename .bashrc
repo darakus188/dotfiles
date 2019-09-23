@@ -25,7 +25,3 @@ source /home/mbunt/script/git-prompt.sh
 # Prompt
 PS1="[\u@\h \W]\$(__git_ps1)$ "
 export PS1
-
-if [[ $- == *i* ]]; then
-    exec fish
-fi
