@@ -11,6 +11,6 @@ WINEARCH="win64"
 export WINEARCH
 export WINEPREFIX
 
-PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/go/bin"
+PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/go/bin"
 export PATH
 
