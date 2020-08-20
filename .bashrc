@@ -13,6 +13,7 @@ fi
 # User specific aliases and functions
 alias crmud="cd /home/mbunt/rust/red-shale"
 alias ls=exa
+alias vim=nvim
 
 # Git
 source /home/mbunt/script/git-prompt.sh
