@@ -24,11 +24,16 @@ bindsym $mod+Shift+b exec firefox
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi -S drun
 
+
+### Window config
+default_border pixel
+for_window [window_role="About"] floating enabled
+for_window [title="Volume Control"] floating enabled
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/default.png fill
-default_border pixel
 #
 # Example configuration:
 #
