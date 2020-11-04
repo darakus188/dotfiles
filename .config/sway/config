@@ -8,7 +8,6 @@
 #
 # Logo key Mod4.
 # Alt key Mod1
-# 
 set $mod Mod1
 # Home row direction keys, like vim
 set $left h
@@ -29,7 +28,7 @@ set $menu wofi -S drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/default.png fill
-#default_border pixel
+default_border pixel
 #
 # Example configuration:
 #
