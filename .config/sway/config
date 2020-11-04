@@ -6,8 +6,10 @@
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
+# Logo key Mod4.
+# Alt key Mod1
+# 
+set $mod Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -15,15 +17,19 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term alacritty
+# Launch Firefox
+bindsym $mod+Shift+b exec firefox
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi -S drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/default.png fill
+#default_border pixel
 #
 # Example configuration:
 #
@@ -201,17 +207,30 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    swaybar_command waybar
+    #position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    ## When the status_command prints a new line to stdout, swaybar updates.
+    ## The default just shows the current date and time.
+    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    #colors {
+    #   statusline #ffffff
+    #   background #323232
+    #   inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
 }
+
+#
+# Multimedia keys
+#
+bindsym XF86AudioRaiseVolume exec ~/script/volume-up.sh
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 
 include /etc/sway/config.d/*
