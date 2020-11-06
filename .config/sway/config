@@ -29,6 +29,8 @@ set $menu wofi -S drun
 default_border pixel
 for_window [window_role="About"] floating enabled
 for_window [title="Volume Control"] floating enabled
+for_window [title="Blizzard Battle.net"] floating enabled
+for_window [title="Files"] floating enabled
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
