@@ -31,10 +31,14 @@ for_window [window_role="About"] floating enabled
 for_window [title="Volume Control"] floating enabled
 for_window [title="Blizzard Battle.net"] floating enabled
 for_window [title="Files"] floating enabled
+for_window [window_type="menu"] floating enable
+for_window [window_type="dialog"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
+for_window [window_role="Open Files"] floating enable
+for_window [window_role="Save As"] floating enable
 
 ### Output configuration
 #
