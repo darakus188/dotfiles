@@ -23,6 +23,10 @@ bindsym $mod+Shift+b exec firefox
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi -S drun
+# Screenshot commands
+set $screenshot grim ~/Pictures/screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip slurp | grim -g - ~/Pictures/screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+
 
 
 ### Window config
@@ -30,7 +34,6 @@ default_border pixel
 for_window [window_role="About"] floating enabled
 for_window [title="Volume Control"] floating enabled
 for_window [title="Blizzard Battle.net"] floating enabled
-for_window [title="Files"] floating enabled
 for_window [window_type="menu"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_role="pop-up"] floating enable
@@ -245,6 +248,12 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+#
+# Screnshots
+#
+bindsym $mod+Print exec $screenshot
+bindsym $mod+Shift+Print exec $screenclip
 
 
 #
